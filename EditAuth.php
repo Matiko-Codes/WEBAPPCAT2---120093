@@ -30,7 +30,7 @@ if(isset($_GET['AuthorId'])) {
 
     <h2>Edit Author</h2>
 
-    <form action="AutRegistration.php" method="post">
+    <form action="processes/AutRegistration.php" method="post">
         <!-- AuthorId -->
         <input type="hidden" name="authorId" value="<?php echo $author['AuthorId']; ?>">
 
