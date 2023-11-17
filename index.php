@@ -10,12 +10,8 @@
 
     <h2>Author Details Submission</h2>
 
-    <form action="process_form.php" method="post">
-        <!-- AuthorId -->
-        <label for="authorId">Author ID:</label>
-        <input type="text" id="authorId" name="authorId" required>
-        <br>
-
+    <form action="AuthorRegistration.php" method="post">
+        
         <!-- AuthorFullName -->
         <label for="authorFullName">Author Full Name:</label>
         <input type="text" id="authorFullName" name="authorFullName" required>
@@ -43,10 +39,13 @@
 
         <!-- AuthorSuspended -->
         <label for="authorSuspended">Suspended:</label>
-        <input type="checkbox" id="authorSuspended" name="authorSuspended">
+        <select id="authorSuspended" name="authorSuspended" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
         <br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" name="submitBtn" value="Submit">
     </form>
 
 </body>
