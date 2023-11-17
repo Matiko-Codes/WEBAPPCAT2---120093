@@ -1,7 +1,7 @@
 <?php
 
 
-echo "Reached AuthorRegistration.php";
+echo "Reached AutRegistration.php";
 
 include 'DbConn.php';
 

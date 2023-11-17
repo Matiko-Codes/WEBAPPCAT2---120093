@@ -51,6 +51,7 @@ $authors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Author Biography</th>
                     <th>Date of Birth</th>
                     <th>Suspended</th>
+                    <th>Action</th> <!-- Added column for Delete button -->
                 </tr>
             </thead>
             <tbody>
@@ -63,6 +64,10 @@ $authors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $author['AuthorBiography']; ?></td>
                         <td><?php echo $author['AuthorDateOfBirth']; ?></td>
                         <td><?php echo $author['AuthorSuspended'] ? 'Yes' : 'No'; ?></td>
+                        <td>
+                            <a href="EditAuth.php?AuthorId=<?php echo $author['AuthorId']; ?>">Edit</a>
+                            <a href="DelAuth.php?AuthorId=<?php echo $author['AuthorId']; ?>" onclick="return confirm('Are you sure you want to delete this author?')">Delete</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
