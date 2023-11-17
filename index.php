@@ -10,7 +10,7 @@
 
     <h2>Author Details Submission</h2>
 
-    <form action="AuthorRegistration.php" method="post">
+    <form action="processes/AutRegistration.php" method="post">
         
         <!-- AuthorFullName -->
         <label for="authorFullName">Author Full Name:</label>

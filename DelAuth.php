@@ -1,5 +1,5 @@
 <?php
-include 'DbConn.php';
+include 'configs/DbConn.php';
 
 if(isset($_GET['AuthorId'])) {
     $authorId = $_GET['AuthorId'];

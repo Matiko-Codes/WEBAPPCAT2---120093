@@ -1,6 +1,6 @@
 <?php
 
-include 'DbConn.php';
+include 'configs/DbConn.php';
 
 $sql = "SELECT * FROM authorstb ORDER BY AuthorFullName ASC";
 
