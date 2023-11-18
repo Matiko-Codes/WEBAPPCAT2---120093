@@ -51,7 +51,7 @@ $authors = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Author Biography</th>
                     <th>Date of Birth</th>
                     <th>Suspended</th>
-                    <th>Action</th> <!-- Added column for Delete button -->
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

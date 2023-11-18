@@ -4,7 +4,7 @@ echo "Reached AutRegistration.php";
 
 include __DIR__ . '/../configs/DbConn.php';
 
-// Check if the database connection is successful before proceeding
+// connection check
 if (isset($DbConn)) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve data from the form
@@ -15,15 +15,13 @@ if (isset($DbConn)) {
         $authorDateOfBirth = $_POST['authorDateOfBirth'];
         $authorSuspended = isset($_POST['authorSuspended']) ? 1 : 0;
 
-        // SQL query to insert data into the database
+        // SQL query for insertion
         $sql = "INSERT INTO authorstb (AuthorFullName, AuthorEmail, AuthorAddress, AuthorBiography, AuthorDateOfBirth, AuthorSuspended) 
                 VALUES (:authorFullName, :authorEmail, :authorAddress, :authorBiography, :authorDateOfBirth, :authorSuspended)";
 
-        // Prepare and execute the SQL statement
         try {
             $stmt = $DbConn->prepare($sql);
 
-            // Bind parameters
             $stmt->bindParam(':authorFullName', $authorFullName);
             $stmt->bindParam(':authorEmail', $authorEmail);
             $stmt->bindParam(':authorAddress', $authorAddress);
@@ -31,7 +29,6 @@ if (isset($DbConn)) {
             $stmt->bindParam(':authorDateOfBirth', $authorDateOfBirth);
             $stmt->bindParam(':authorSuspended', $authorSuspended);
 
-            // Execute the statement
             if ($stmt->execute()) {
                 echo "Author registration successful!";
             } else {

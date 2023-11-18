@@ -9,7 +9,7 @@ try {
     echo "Connected successfully";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
-    die(); // Add this line to stop script execution if the connection fails
+    die();
 }
 
 ?>
